@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+ENV/
+.env
+*.log
+.DS_Store
+node_modules/
+dist/
+service_account.json
+.pytest_cache/

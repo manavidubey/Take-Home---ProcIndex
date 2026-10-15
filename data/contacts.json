@@ -1,0 +1,74 @@
+[
+  {
+    "caller_id": "CL-1001",
+    "name": "Sara",
+    "phone": "415-555-0190",
+    "timestamp": "2026-10-15 05:48 PM",
+    "intent": "New Appointment Booking",
+    "service": "Interior Detail",
+    "appointment": "Thursday, October 15 @ 4:30 PM",
+    "status": "Confirmed Booking",
+    "action_required": "None",
+    "notes": "Booked Interior Detail for Thursday, October 15 at 4:30 PM. Vehicle:  (updated 2026-10-15 05:48 PM) | Booked Interior Detail for Thursday, October 15 at 4:30 PM. Vehicle:  (updated 2026-10-15 05:39 PM) | Booked Interior Detail for Thursday, October 15 at 4:30 PM. Vehicle:  (updated 2026-10-15 05:38 PM) | Booked Interior Detail for Thursday, October 15 at 4:30 PM. Vehicle:  (updated 2026-10-15 05:3"
+  },
+  {
+    "caller_id": "CL-1002",
+    "name": "Marcus Vance",
+    "phone": "(415) 555-0821",
+    "timestamp": "2026-10-14 04:30 PM",
+    "intent": "New Appointment Booking",
+    "service": "Interior Detail & Wash",
+    "appointment": "Thursday, October 15 @ 3:30 PM",
+    "status": "Confirmed Booking",
+    "action_required": "None",
+    "notes": "Booked 3:30 PM Thursday slot for Porsche Cayenne SUV. Pre-existing appointment on calendar."
+  },
+  {
+    "caller_id": "CL-1003",
+    "name": "Arthur Pendelton",
+    "phone": "415-555-0777",
+    "timestamp": "2026-10-15 01:10 PM",
+    "intent": "Billing Dispute - Escalated",
+    "service": "Exterior Detail",
+    "appointment": "None",
+    "status": "ESCALATED: Owner Review Required",
+    "action_required": "Mike Henderson to review invoice and call customer back today",
+    "notes": "Customer Arthur Pendelton reports being overcharged $45 on his card yesterday. Escalated to Mike Henderson."
+  },
+  {
+    "caller_id": "CL-1004",
+    "name": "David Miller",
+    "phone": "(415) 555-0419",
+    "timestamp": "2026-10-15 09:45 AM",
+    "intent": "New Appointment Booking",
+    "service": "Express Wash & Vac",
+    "appointment": "Thursday, October 15 @ 10:00 AM",
+    "status": "Confirmed Booking",
+    "action_required": "None",
+    "notes": "Booked morning Express Wash & Vac for Tesla Model 3. Customer notified to remove child car seat."
+  },
+  {
+    "caller_id": "CL-1005",
+    "name": "Elena Rostova",
+    "phone": "(415) 555-0219",
+    "timestamp": "2026-10-15 01:30 PM",
+    "intent": "Running Late Notice",
+    "service": "Interior Detail",
+    "appointment": "Thursday, October 15 @ 2:00 PM",
+    "status": "Running Late Notified",
+    "action_required": "Bay technicians informed to hold bay",
+    "notes": "Customer notified 20-minute traffic delay. 15-minute shop grace period applied."
+  },
+  {
+    "caller_id": "CL-1006",
+    "name": "Sarah Jenkins",
+    "phone": "415-555-9988",
+    "timestamp": "2026-10-15 11:20 AM",
+    "intent": "New Appointment Booking",
+    "service": "Full Signature Detail",
+    "appointment": "Friday, October 16 @ 10:00 AM",
+    "status": "Confirmed Booking",
+    "action_required": "None",
+    "notes": "Booked Full Signature Detail for Friday morning. Drop-off prep checklist provided."
+  }
+]

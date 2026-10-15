@@ -1,0 +1,21 @@
+[MASTER]
+# Run from project root: python3 -m pylint app/
+init-hook='import sys; sys.path.insert(0, ".")'
+
+[MESSAGES CONTROL]
+# E1101: googleapiclient builds resources dynamically — pylint can't see their members
+# R0903: Settings is intentionally a plain namespace class
+# R0913/R0917: log_call and book_appointment have many params by design
+disable=
+    E1101,
+    R0903,
+    R0913,
+    R0917
+
+[FORMAT]
+max-line-length=120
+
+[DESIGN]
+max-args=10
+max-locals=25
+max-returns=8

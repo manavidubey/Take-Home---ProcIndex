@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cedar Lane Auto Detailing - AI Receptionist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <div class="app-layout">
+    <!-- Top Header -->
+    <header class="top-header">
+      <div class="brand">
+        <div class="logo-badge">🚗</div>
+        <div>
+          <h1>Cedar Lane Auto Detailing</h1>
+          <p class="tagline">AI Receptionist • Mill Valley, CA • (415) 555-0142</p>
+        </div>
+      </div>
+      <div class="header-badges">
+        <div class="status-chip live" id="calendar-status-chip">
+          <span class="dot"></span> Google Calendar Live
+        </div>
+        <div class="status-chip live" id="sheets-status-chip">
+          <span class="dot"></span> Contacts Sheet Synced
+        </div>
+        <div class="mode-toggle">
+          <button class="mode-btn active" id="text-mode-btn">💬 Text Chat</button>
+          <button class="mode-btn" id="voice-mode-btn">🎙️ Voice Mode (Vapi)</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Grid -->
+    <main class="main-content">
+      <!-- Left: Chat Panel -->
+      <section class="panel chat-panel">
+        <div class="panel-header">
+          <div class="agent-profile">
+            <div class="agent-avatar">🤖</div>
+            <div>
+              <h3>Cedar Lane Receptionist</h3>
+              <p class="agent-sub" id="agent-sub-text">Ready to assist callers with booking, scheduling, and shop inquiries</p>
+            </div>
+          </div>
+          <button class="btn-sm" id="clear-chat-btn" title="Reset Conversation">🔄 Reset</button>
+        </div>
+
+
+
+        <!-- Chat Stream -->
+        <div class="chat-messages" id="chat-messages">
+          <div class="message assistant">
+            <div class="bubble">
+              Thanks for calling Cedar Lane Auto Detailing! How can I help you today?
+            </div>
+            <div class="msg-meta">Cedar Lane AI • Just now</div>
+          </div>
+        </div>
+
+        <!-- Chat Input -->
+        <div class="chat-input-area">
+          <textarea id="user-input" placeholder="Type what a caller would say (e.g. 'Is the 3:30 interior detail on Thursday open?')..." rows="2"></textarea>
+          <div class="input-actions">
+            <button id="voice-speak-btn" class="icon-btn" title="Speak via Microphone">🎙️</button>
+            <button id="send-btn" class="send-btn">Send Message</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Right: Live System Inspectors -->
+      <section class="panel inspector-panel">
+        <div class="tabs-nav">
+          <button class="tab-btn active" data-tab="tab-calendar">📅 Google Calendar</button>
+          <button class="tab-btn" data-tab="tab-sheets">📊 Google Sheets (Contacts)</button>
+          <button class="tab-btn" data-tab="tab-vapi">🎙️ Phase 2: Vapi Voice Setup</button>
+        </div>
+
+        <!-- Tab 1: Calendar -->
+        <div class="tab-content active" id="tab-calendar">
+          <div class="inspector-header">
+            <div>
+              <h4>Cedar Lane Shop Calendar</h4>
+              <p class="subtle">Live bookings and schedule conflicts synced via Google Calendar API</p>
+            </div>
+            <button class="btn-sm" id="refresh-cal-btn">🔄 Refresh</button>
+          </div>
+
+          <div class="events-list" id="events-list">
+            <div class="loading-spinner">Loading events from Google Calendar...</div>
+          </div>
+        </div>
+
+        <!-- Tab 2: Sheets -->
+        <div class="tab-content" id="tab-sheets">
+          <div class="inspector-header">
+            <div>
+              <h4>Google Sheet — "Contacts" Tab</h4>
+              <p class="subtle">Logs every caller, contact info, call intent, and action required</p>
+            </div>
+            <button class="btn-sm" id="refresh-sheets-btn">🔄 Refresh</button>
+          </div>
+          <div class="table-container">
+            <table class="contacts-table" id="contacts-table">
+              <thead>
+                <tr>
+                  <th>Caller ID</th>
+                  <th>Customer Name</th>
+                  <th>Phone Number</th>
+                  <th>Last Call Time</th>
+                  <th>Intent</th>
+                  <th>Service</th>
+                  <th>Appointment</th>
+                  <th>Status</th>
+                  <th>Follow-Up Required</th>
+                  <th>Notes</th>
+                </tr>
+              </thead>
+              <tbody id="contacts-body">
+                <tr><td colspan="10" style="text-align: center;">Loading contacts...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Tab 3: Vapi Voice -->
+        <div class="tab-content" id="tab-vapi">
+          <div class="inspector-header">
+            <div>
+              <h4>Phase 2: Vapi Voice Agent Integration</h4>
+              <p class="subtle">Tuned for ultra-low voice response latency (<1.2 seconds)</p>
+            </div>
+            <button class="btn-sm" id="copy-config-btn">📋 Copy Config</button>
+          </div>
+          <div class="vapi-guide">
+            <div class="knob-card">
+              <h5>⚡ Voice Latency Optimization Knobs</h5>
+              <ul>
+                <li><strong>Transcriber:</strong> Deepgram Nova-2 with <code>endpointing: 255ms</code> (fast utterance detection)</li>
+                <li><strong>Voice Model:</strong> Cartesia Sonic English (<code>latency &lt; 110ms</code> time-to-first-audio)</li>
+                <li><strong>LLM Provider:</strong> Groq <code>openai/gpt-oss-120b</code> / <code>qwen/qwen3.8-27b</code> (200ms TTFT)</li>
+                <li><strong>Response Mode:</strong> 1-2 sentence conversational spoken output</li>
+              </ul>
+            </div>
+
+            <div class="knob-card">
+              <h5>🔗 Webhook & Server URL for Vapi</h5>
+              <div class="code-box">
+                <span id="webhook-url-display">http://localhost:8000/api/vapi/webhook</span>
+                <button class="copy-small" onclick="copyWebhook()">Copy</button>
+              </div>
+              <p class="subtle" style="margin-top: 6px;">Expose publicly using localtunnel: <code>npx localtunnel --port 8000</code></p>
+            </div>
+
+            <div class="knob-card">
+              <h5>📄 Assistant Configuration (JSON)</h5>
+              <pre class="json-preview" id="vapi-json-display">Loading Vapi JSON payload...</pre>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
